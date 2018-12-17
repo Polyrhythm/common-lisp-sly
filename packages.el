@@ -49,7 +49,7 @@
 
 (defun common-lisp-sly/pre-init-evil ()
   (with-eval-after-load 'evil
-    (when (configuration-layer/package-used-p 'sly)
+    (when (configuration-layer/layer-usedp 'sly)
       (evil-set-initial-state 'sly-mrepl-mode 'insert)
       (evil-set-initial-state 'sly-inspector-mode 'emacs)
       (evil-set-initial-state 'sly-db-mode 'emacs)
@@ -58,7 +58,7 @@
 
 (defun common-lisp-sly/pre-init-smartparens ()
   (with-eval-after-load 'smartparens
-    (when (configuration-layer/package-used-p 'sly)
+    (when (configuration-layer/layer-usedp 'sly)
       (sp-local-pair '(sly-mrepl-mode) "'" "'" :actions nil)
       (sp-local-pair '(sly-mrepl-mode) "`" "`" :actions nil))))
 
